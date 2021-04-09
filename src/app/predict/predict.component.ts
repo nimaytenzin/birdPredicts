@@ -28,7 +28,7 @@ export class PredictComponent implements OnInit{
   label=[]
 
   @ViewChild("chart", {static:true}) chart: ChartComponent;
-  public chartOptions: Partial;
+  public chartOptions: any;
 
   showResults:boolean = false;
 
@@ -68,7 +68,7 @@ export class PredictComponent implements OnInit{
    this.data = [];
    this.label =[]
    
-    var image = document.getElementById('output');
+    var image:any = document.getElementById('output');
     image.src = URL.createObjectURL(event.target.files[0]);
 
     const toDataURL = url => fetch(url)

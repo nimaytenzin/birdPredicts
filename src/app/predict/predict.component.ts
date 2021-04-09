@@ -100,40 +100,36 @@ export class PredictComponent implements OnInit{
           setTimeout(() => {
             /** spinner ends after 5 seconds */
             let arr = res.predictions
-          this.predictedBird = res.predictions[0].brid_name
-          this.prob = res.predictions[0].probability
-          console.log(this.predictedBird)
-          this.showResults = true
-          console.log(arr)
+            this.predictedBird = res.predictions[0].brid_name
+            this.prob = res.predictions[0].probability
+            console.log(this.predictedBird)
+            this.showResults = true
+            console.log(arr)
 
-          arr.forEach(element => {
-            this.data.push(element.probability);
-            this.label.push(element.brid_name)
-          });
-          this.chartOptions = {
-            series: [
-              {
-                name: "Probability",
-                data: this.data
+            arr.forEach(element => {
+              this.data.push(element.probability);
+              this.label.push(element.brid_name)
+            });
+            this.chartOptions = {
+              series: [
+                {
+                  name: "Probability",
+                  data: this.data
+                }
+              ],
+              chart: {
+                height: 350,
+                type: "bar"
+              },
+              title: {
+                text: "Predictions"
+              },
+              xaxis: {
+                categories: this.label
               }
-            ],
-            chart: {
-              height: 350,
-              type: "bar"
-            },
-            title: {
-              text: "Predictions"
-            },
-            xaxis: {
-              categories: this.label
-            }
-          };
-            this.spinner.hide();
-            
-          }, 4000);
-         
-          
-          
+            };
+            this.spinner.hide();    
+          }, 4000);         
         })
       })
   };

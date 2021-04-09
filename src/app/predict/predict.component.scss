@@ -29,11 +29,26 @@
     height: 50%;
     width: 50%;
 }
+mat-toolbar{
+    
+    background-color: rgb(38,160,252,.5);
+    font-size: x-large;
+    color: white
+    
+}
+
+mat-toolbar > span{
+    width: 100%;
+    text-align: center;
+
+}
 
 
 
 .custom-file-upload {
     border: 1px solid #ccc;
+    background-color: rgb(101,181,86,.9);
+    color: white;
     border-radius: .3rem;
     display: inline-block;
     padding: 6px 12px;

@@ -44,7 +44,7 @@ export class PredictComponent implements OnInit{
         }
       ],
       chart: {
-        height: 350,
+        height: 400,
         with:200,
         type: "bar"
       },
@@ -53,7 +53,8 @@ export class PredictComponent implements OnInit{
       },
       xaxis: {
         categories: this.label
-      }
+      },
+      colors: ["rgb(101,181,86)"]
     };
     
   }
@@ -118,7 +119,7 @@ export class PredictComponent implements OnInit{
                 }
               ],
               chart: {
-                height: 350,
+                height: 400,
                 type: "bar"
               },
               title: {
@@ -126,10 +127,11 @@ export class PredictComponent implements OnInit{
               },
               xaxis: {
                 categories: this.label
-              }
+              },
+              colors: ["rgb(101,181,86)"]
             };
             this.spinner.hide();    
-          }, 4000);         
+          }, 2500);         
         })
       })
   };

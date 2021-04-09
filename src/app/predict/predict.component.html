@@ -1,9 +1,10 @@
+
 <div class="main">
-    
+   
 <div class="header">
-    <h1>
-        Bird Species Prediction App
-    </h1>
+    <mat-toolbar>
+        <span> Bird Species Prediction App</span>
+      </mat-toolbar>
     <p>
         This <strong>Deep Learning Model</strong>  is trained using the
          <a href="https://www.kaggle.com/gpiosenka/100-bird-species" target="_blank" >dataset</a> of 260 birds 
@@ -42,7 +43,7 @@
         <h2>Prediction: {{predictedBird}}</h2>
         <h2>Probability: {{prob}}</h2>
         <p>
-            Note: Probability ranges from 0 to 1. Probability of above 0.5 is acceptable and below 0.5 may be rejected
+            Note: Probability ranges from 0(low) to 1(high). A Probability below 0.5 means the model is unable to predict.
         </p>
     
         

@@ -92,11 +92,12 @@ export class PredictComponent implements OnInit{
         let image={
           image: base64Encoded
         }
+        this.spinner.show();
 
         this.http.post<any>('https://zhichar-pling.ddnsfree.com/bci/predict', image).subscribe(res => {
           console.log(res)
 
-          this.spinner.show();
+  
 
           setTimeout(() => {
             /** spinner ends after 5 seconds */
@@ -131,7 +132,7 @@ export class PredictComponent implements OnInit{
               colors: ["rgb(101,181,86)"]
             };
             this.spinner.hide();    
-          }, 2500);         
+          }, 1000);         
         })
       })
   };

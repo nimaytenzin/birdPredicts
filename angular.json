@@ -38,7 +38,9 @@
               "node_modules/material-design-icons/iconfont/material-icons.css"
   
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/apexcharts/dist/apexcharts.min.js"
+            ]
           },
           "configurations": {
             "production": {

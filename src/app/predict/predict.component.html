@@ -1,0 +1,57 @@
+<div class="main">
+    
+<div class="header">
+    <h1>
+        Bird Species Prediction App
+    </h1>
+    <p>
+        This <strong>Deep Learning Model</strong>  is trained using the <a href="https://www.kaggle.com/gpiosenka/100-bird-species" target="_blank" >dataset</a> of 260 birds found in USA.
+        The list can be found <a href="https://raw.githubusercontent.com/nimaytenzin/cdrs/main/birdLists.csv" target="_blank">here.</a>
+        The Model yields an <strong>accuracy of 96%</strong>.
+        The predictions for local Birds of Bhutan may not be inaccurate since the model is 
+        trained on US Datasets.
+    </p>
+    <p>
+        <em>Note:</em>
+        For usage in Bhutan, the model needs to be retrained using the Datasets of birds in Bhutan.
+    </p>
+
+    <p>
+        <strong>Usage:</strong> Clik on the upload Image button.Navigate to the bird image and click on upload. 
+        The prediction results will be displayed shortly. 
+        Note: For best results, please upload a full body picture of the bird
+    </p>
+</div>
+  
+
+<div class="mian2">
+    <div class="upload-img">
+       <div style="display: flex; flex-direction: row;justify-content: flex-start;">         
+            <input type="file"  accept="image/gif, image/jpeg, image/png" name="image" id="file"  (change)="loadFile($event)" style="display: none;">
+            <p><label for="file" style="cursor: pointer;" class="custom-file-upload"><mat-icon aria-hidden="false" aria-label="Example home icon">file_upload</mat-icon>Upload Image</label></p>
+       </div>
+        <img id="output" width="400" />	
+    </div>
+      
+      
+      <div class="results" *ngIf="showResults">
+        <h2>Prediction: {{predictedBird}}</h2>
+        <h2>Probability: {{prob}}</h2>
+        <p>
+            Note: Probability ranges from 0 to 1. Probability of above 0.5 is acceptable and below 0.5 may be rejected
+        </p>
+    
+        
+        <div style="text-align:center">
+            <apx-chart
+              [series]="chartOptions.series"
+              [chart]="chartOptions.chart"
+              [xaxis]="chartOptions.xaxis"
+              [title]="chartOptions.title"
+            ></apx-chart>
+        </div>
+      </div>
+</div>
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "triangle-skew-spin" [fullScreen] = "true"><p style="color: white" > predicting...</p></ngx-spinner>
+  
+</div>
